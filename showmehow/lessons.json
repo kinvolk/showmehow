@@ -39,6 +39,44 @@
         }
     },
     {
+        "name": "shell_extension",
+        "available_to": ["console"],
+        "desc": "Modify the things in the shell.",
+        "entry": "extension_intro",
+        "practice": {
+            "extension_intro": {
+                "task": "Before creating our own shell extension, lets learn a bit about them. GNOME Shell extensions are small pieces of code written by third party developers that modify the way GNOME works. (If you are familiar with Chrome Extensions or Firefox Addons, GNOME Shell extensions are similar to them.). For more information go here https://extensions.gnome.org/about/. I will wait...",
+                "effects": {
+                    "success": {
+                        "reply": "All done? Good, lets try to create our first shell extension.",
+                        "move_to": "extension_create"
+                    }
+                }
+            },
+            "extension_create": {
+                "task": "In this lesson we will create a 'Hello, world' shell extension and later modify it. Lets start by typing these commands 'eos-shell-extension-tool -c'. This will open gnome-builder with some code. It will also add the shell extension in the right side of your screen.",
+                "effects": {
+                    "success": {
+                        "reply": "Great job! You created your first shell extension. You should now be able to see the extension and the code.",
+                        "moves_to": "extension_modify"
+                    },
+                    "failure": {
+                        "reply": "Lets try 'eos-shell-extension-tool -c' instead."
+                    }
+                }
+            },
+            "extension_modify": {
+                "task": "So this is the code behind our simple extension. The code is written in JavaScript programming language. Lets start by modifying the text that is displayed. Move to line 15, you should now be able to see something like this 'text = new St.Label...'. Replace the 'Hello, world!' that is in between \" \", with 'I am an extension'. Don't forget to save the code and let me know when you are done...",
+                "effects": {
+                    "success": {
+                        "reply": "Congratulations! You should now be able to see your new text display instead of 'Hello, world!'",
+                        "completes_lesson": true
+                    }
+                }
+            }
+        }
+    },
+    {
         "name": "joke",
         "available_to": ["console"],
         "desc": "Tell me a joke",
